@@ -1,0 +1,25 @@
+# Default values for aws-ec2-security-group.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+terraform:
+  # -- The version of Terraform used
+  version: 1.1.4
+  # -- The HashiCorp official Terraform module
+  module: https://github.com/terraform-aws-modules/terraform-aws-security-group
+  # -- The version of the Terraform module used to create an IAM role
+  moduleVersion: v4.8.0
+
+aws:
+  # -- The AWS region where the IAM role should be created
+  region: ""
+  # --  The AWS credentials to be used for provisioning the IAM role. See [supported credential types](http://tf.isaaguilar.com/docs/references/configuration/#credentials-v1alpha1-tf)
+  credentials: {}
+
+ec2:
+    # -- Name of EC2-VPC Security Group
+    sg_name: ""
+    # -- ID of the VPC where to create security group
+    vpc_id: ""
+    # -- List of ingress rules to create where 'cidr_blocks' is used
+    ingress_with_cidr_blocks: []
