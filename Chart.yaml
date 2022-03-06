@@ -4,3 +4,4 @@ description: AWS EC2-VPC Security Group Helm chart for the [Terraform-operator](
 type: application
 version: 0.1.0
 appVersion: "4.8.0"
+icon: https://raw.githubusercontent.com/appvia/terraform-providers/main/aws/EC2_VPC_Security_Group.png
