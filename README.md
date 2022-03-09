@@ -48,7 +48,7 @@ helm uninstall [RELEASE_NAME]
 
 ## Example Usage
 ```bash
-helm upgrade --install appvia-community appvia-community/aws-ec2-security-group \
+helm upgrade --install aws-ec2-security-group appvia-community/aws-ec2-security-group \
   --namespace my-ns \
   --set aws.region=eu-west-2  \
   --set ec2.sg_name=my-sg \
