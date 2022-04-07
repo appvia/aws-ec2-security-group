@@ -22,6 +22,8 @@ spec:
     value: {{ required "You must specify a EC2-VPC security group name!" .Values.ec2.sg_name }}
   - name: TF_VAR_vpc_id
     value: {{ required "You must specify a VPC ID!" .Values.ec2.vpc_id }}
+  - name: TF_VAR_ingress_with_cidr_blocks
+    value: {{ .Values.ec2.ingress_with_cidr_blocks | toJson }}
   outputsSecret: "{{ .Chart.Name }}-outputs"
   customBackend: |-
     terraform {
