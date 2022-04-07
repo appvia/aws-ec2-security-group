@@ -23,7 +23,7 @@ spec:
   - name: TF_VAR_vpc_id
     value: {{ required "You must specify a VPC ID!" .Values.ec2.vpc_id }}
   - name: TF_VAR_ingress_with_cidr_blocks
-    value: {{ .Values.ec2.ingress_with_cidr_blocks | toJson }}
+    value: {{ .Values.ec2.ingress_with_cidr_blocks | toJson | quote }}
   outputsSecret: "{{ .Chart.Name }}-outputs"
   customBackend: |-
     terraform {
