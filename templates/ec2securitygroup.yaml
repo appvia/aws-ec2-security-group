@@ -24,11 +24,11 @@ spec:
     value: {{ required "You must specify a VPC ID!" .Values.ec2.vpc_id }}
   - name: TF_VAR_ingress_with_cidr_blocks
     value: {{ .Values.ec2.ingress_with_cidr_blocks | toJson | quote }}
-  outputsSecret: "{{ .Chart.Name }}-outputs"
+  outputsSecret: "{{ .Release.Name }}-outputs"
   customBackend: |-
     terraform {
       backend "kubernetes" {
-        secret_suffix    = "{{ .Chart.Name }}"
+        secret_suffix    = "{{ .Release.Name }}"
         in_cluster_config  = true
         namespace = "{{ .Release.Namespace }}"
       }
