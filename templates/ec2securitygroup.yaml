@@ -1,7 +1,7 @@
 apiVersion: tf.isaaguilar.com/v1alpha1
 kind: Terraform
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Release.Name }}
   labels:
     {{- include "aws-ec2-security-group.labels" . | nindent 4 }}
 spec:
